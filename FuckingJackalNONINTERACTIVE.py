@@ -1,5 +1,10 @@
 import math, argparse
-from PIL import Image
+try:
+    from PIL import Image
+except ImportError:
+    print('No PIL installed! Install PIL (pillow) and try again.')
+    input()
+    quit()
 parser = argparse.ArgumentParser()
 parser.add_argument('-s', '--source', type=str, help='A filename to open.')
 parser.add_argument('-r', '--result', type=str, help='A filename to save to.')
